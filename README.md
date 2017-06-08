@@ -24,4 +24,13 @@ It would be useful to add an alias to quickly call the command.
 
 For example, if `wp="node wiki.js"`, `wp canada` would return a brief description of Canada. 
 
+It is also recommended to pipe the output through `fold`, as this will greatly increase readability. Here is an example of what might be done.
+
+```
+node wiki.js cheese | fold -s -w60
+``` 
+
+* `-s` will break only at spaces (so words are not cut off)
+* `-w60` says to break after 60 characters
+
 Any feedback or suggestions would be greatly appreciated. 
