@@ -20,17 +20,12 @@ node wiki.js <word word>
 node wiki.js war of 1812
 ```
 
-It would be useful to add an alias to quickly call the command. 
-
-For example, if `wp="node wiki.js"`, `wp canada` would return a brief description of Canada. 
-
-It is also recommended to pipe the output through `fold`, as this will greatly increase readability. Here is an example of what might be done.
+It would be useful to add a function to the shell configuration to simplify using this tool.
 
 ```
-node wiki.js cheese | fold -s -w60
-``` 
+function wp() { node wiki.js $@ | fold -s -w60 }
+```
 
-* `-s` will break only at spaces (so words are not cut off)
-* `-w60` says to break after 60 characters
+This makes it so the tool can be called with a simple `wp <word>` regardless of the directory that you are in. The pipe to `fold` is optional but increases readability. 
 
 Any feedback or suggestions would be greatly appreciated. 
