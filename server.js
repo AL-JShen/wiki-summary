@@ -1,15 +1,7 @@
 const axios = require('axios');
 
-const search = process.argv[2];
-// let newSearch = '';
-// 
-// for (let i = 0; i < search.length; i++) {
-//   if (i === ' ') {
-//     newSearch += '_';
-//   } else {
-//     newSearch += i;
-//   }
-// }
+process.argv.splice(0, 2);
+const search = process.argv.join("_");
 
 function printOut(inObj) {
   let pageNum = Object.keys(inObj.query.pages).toString();
